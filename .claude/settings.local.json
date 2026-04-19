@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import chess, flask; print\\('Dependencies OK'\\); b=chess.Board\\(\\); print\\('python-chess OK, FEN:', b.fen\\(\\)[:30]\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(curl -s http://localhost:5000/)"
+    ]
+  }
+}
