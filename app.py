@@ -7,7 +7,15 @@ import io
 
 app = Flask(__name__)
 
-STOCKFISH_PATH = os.path.join(os.path.dirname(__file__), "stockfish", "stockfish.exe")
+if os.name == "nt":
+    # Windows
+    STOCKFISH_PATH = os.path.join(os.path.dirname(__file__), "stockfish", "stockfish.exe")
+else:
+    # Linux (Render)
+    STOCKFISH_PATH = "/usr/games/stockfish"
+
+#  OUTSIDE the if/else
+engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
 
 OPENINGS = [
     # --- OPEN GAMES (1.e4 e5) ---
