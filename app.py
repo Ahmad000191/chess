@@ -12,7 +12,7 @@ if os.name == "nt":
     STOCKFISH_PATH = os.path.join(os.path.dirname(__file__), "stockfish", "stockfish.exe")
 else:
     # Linux (Render)
-    STOCKFISH_PATH = "/usr/games/stockfish"
+    STOCKFISH_PATH = os.path.join(os.path.dirname(__file__), "stockfish", "stockfish")
 
 #  OUTSIDE the if/else
 engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
